@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Navigator</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <div>
+          <h1>PDF Navigator</h1>
+          <p class="subtitle">Sequential File Access</p>
+        </div>
+        <button id="minToggle" class="icon-btn" title="Toggle Compact Mode">
+          <svg id="minIcon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3">
+            </path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="input-group">
+        <span class="label">Base URL (Prefix)</span>
+        <input type="text" id="baseUrl" placeholder="https://example.com/file" class="text-input">
+      </div>
+
+      <div class="row">
+        <div class="input-group flex-1">
+          <span class="label">Current Number</span>
+          <div class="number-control">
+            <button id="backBtn" class="nav-btn" title="Previous">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <input type="number" id="fileNumber" value="1" min="0">
+            <button id="nextBtn" class="nav-btn" title="Next">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="input-group width-small">
+          <span class="label">Suffix</span>
+          <input type="text" id="suffix" placeholder=".pdf" class="text-input">
+        </div>
+      </div>
+
+      <div class="input-group">
+        <span class="label">Padding (Digits)</span>
+        <input type="number" id="padding" value="8" min="1" max="20" class="text-input">
+      </div>
+
+      <div class="checkbox-group">
+        <label class="switch">
+          <input type="checkbox" id="autoNav">
+          <span class="slider round"></span>
+        </label>
+        <span class="checkbox-label">Auto-Navigate on Click</span>
+      </div>
+
+      <div class="url-preview">
+        <span class="label">Generated URL</span>
+        <div id="urlText" class="url-text">...</div>
+      </div>
+
+      <button id="openBtn" class="primary-btn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+        Open Link
+      </button>
+    </main>
+
+    <footer>
+      <p>Auto-saving progress...</p>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>

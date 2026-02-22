@@ -1,0 +1,330 @@
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 450px;
+  min-height: 500px;
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-btn {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Compact Mode Styles */
+body.compact {
+  width: 220px;
+  min-height: auto;
+}
+
+body.compact .container {
+  padding: 12px;
+  gap: 8px;
+}
+
+/* Hide everything EXCEPT the navigation row and the header button */
+body.compact .input-group:not(:has(.number-control)),
+body.compact .url-preview,
+body.compact .primary-btn,
+body.compact .checkbox-group,
+body.compact footer,
+body.compact header h1,
+body.compact header .subtitle {
+  display: none !important;
+}
+
+body.compact header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -15px;
+  /* Pull buttons up */
+  position: relative;
+  z-index: 10;
+}
+
+body.compact .row {
+  display: block;
+}
+
+body.compact .width-small {
+  display: none;
+}
+
+body.compact .number-control {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.compact #fileNumber {
+  font-size: 1.1rem;
+  width: 50% !important;
+  color: var(--primary);
+}
+
+body.compact .nav-btn {
+  padding: 10px;
+  background: var(--primary);
+  color: white;
+  border-radius: 8px;
+  display: flex !important;
+  /* Force display */
+}
+
+body.compact .nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.width-small {
+  width: 80px;
+}
+
+.text-input {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.85rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.text-input:focus {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.number-control {
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2px;
+  backdrop-filter: blur(10px);
+}
+
+#fileNumber {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: monospace;
+  padding: 8px;
+  outline: none;
+  width: 100%;
+}
+
+/* Custom Toggle Switch */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.checkbox-label {
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #334155;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: var(--primary);
+}
+
+input:checked+.slider:before {
+  transform: translateX(16px);
+}
+
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+}
+
+.nav-btn:active {
+  transform: scale(0.95);
+}
+
+.url-preview {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px dashed var(--border);
+}
+
+.url-text {
+  font-size: 0.8rem;
+  color: var(--primary);
+  word-break: break-all;
+  font-family: monospace;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  margin-top: 8px;
+}
+
+.primary-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+footer p {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
