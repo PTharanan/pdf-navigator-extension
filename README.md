@@ -94,11 +94,11 @@ To load and run the extension from source:
 ## 💡 How to Use
 
 1. Click on the **PDF Navigator** icon in your Chrome toolbar to open the popup.
-2. If you are already viewing a sequential page (e.g. `D:\web\page\121.html`), the extension will **automatically detect** the format.
+2. If you are already viewing a sequential page (e.g. `D:\web\page\1.html`), the extension will **automatically detect** the format.
 3. If it is not automatically detected, fill out the settings:
    - **Base URL:** `D:\web\page\`
    - **Current Number:** `1`
    - **Suffix:** `.html`
-   - **Padding (Digits):** `3`
+   - **Padding (Digits):** `1`
 4. Toggle **Auto-Navigate on Click** to your preference.
 5. Click the `>` button to advance to page `2` (`D:\web\page\2.html`). The tab will load the new page instantly!
