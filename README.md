@@ -99,6 +99,6 @@ To load and run the extension from source:
    - **Base URL:** `D:\web\page\`
    - **Current Number:** `1`
    - **Suffix:** `.html`
-   - **Padding (Digits):** `1`
+   - **Padding (Digits):** `3`
 4. Toggle **Auto-Navigate on Click** to your preference.
 5. Click the `>` button to advance to page `2` (`D:\web\page\2.html`). The tab will load the new page instantly!
